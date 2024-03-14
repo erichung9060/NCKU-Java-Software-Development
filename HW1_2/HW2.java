@@ -18,26 +18,23 @@ class HW2 {
         }
         scanner.close();
     }
-
+    
     private static BigDecimal processCycle(String cycle_num, int repeat_t) {
         String cycle = cycle_num.split("\\.")[1];
-        for (int i = 0; i < repeat_t * 2 - 1; i++)
-            cycle_num += cycle;
+        for (int i = 0; i < repeat_t * 2 - 1; i++) cycle_num += cycle;
         return new BigDecimal(cycle_num);
     }
 
     private static String formatOutput(BigDecimal num) {
         String integer = num.toString().split("\\.")[0];
         String decimal = num.toString().split("\\.")[1];
-        if (decimal.matches("9+"))
-            return (num.add(new BigDecimal("1"))).toString().split("\\.")[0];
+        if (decimal.matches("9+")) return (num.add(new BigDecimal("1"))).toString().split("\\.")[0];
+        if (decimal.matches("0+")) return integer;
         for (int i = 1; i < decimal.length(); i++) {
             String cycle = decimal.substring(0, i);
             String try_cycle = cycle;
-            while (try_cycle.length() < decimal.length())
-                try_cycle += cycle;
-            if (try_cycle.equals(decimal))
-                return integer + "." + cycle;
+            while (try_cycle.length() < decimal.length())  try_cycle += cycle;
+            if (try_cycle.equals(decimal)) return integer + "." + cycle;
         }
         return num.toString();
     }
