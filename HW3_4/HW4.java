@@ -5,7 +5,7 @@ class HW4 {
         for (int row = 0, col = 0; col < n; col++) {
             if (Math.abs(A[row][col]) <= 1e-9) { // A[row][col] == 0
                 for (int i = row + 1; i < n; i++) {
-                    if (Math.abs(A[row][col]) > 1e-9) {// A[row][col] > 0
+                    if (Math.abs(A[row][col]) > 1e-9) { // A[row][col] > 0
                         double[] temp = A[row];
                         A[row] = A[i];
                         A[i] = temp;
@@ -55,18 +55,12 @@ class HW4 {
             double first = scanner.nextDouble();
             if (first == -999) break;
             A[++i][0] = first;
-            for (int j = 1; j <= n; j++)
-                A[i][j] = scanner.nextDouble();
+            for (int j = 1; j <= n; j++) A[i][j] = scanner.nextDouble();
         }
         scanner.close();
 
         Gaussian(A, n);
-        // for (i = 0; i < n; i++) {
-        //     for (int j = 0; j <= n; j++) {
-        //         System.out.print(A[i][j] + " ");
-        //     }
-        //     System.out.println();
-        // }
+        
         String ans = SolutionType(A, n);
         System.out.println(ans);
     }
