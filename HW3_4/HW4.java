@@ -13,8 +13,7 @@ class HW4 {
                     }
                 }
             }
-            if (Math.abs(A[row][col]) <= 1e-9) // A[row][col] == 0
-                continue;
+            if (Math.abs(A[row][col]) <= 1e-9) continue;
 
             for (int i = row + 1; i < n; i++) {
                 double factor = A[i][col] / A[row][col];
