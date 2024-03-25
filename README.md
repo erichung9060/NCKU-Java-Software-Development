@@ -1,3 +1,3 @@
 # NCKU-Java-Software-Development
 
-National Cheng Kung University 113-2 Java Software Development homework record.
+  2023 Java Software Development Course at National Cheng Kung University.
