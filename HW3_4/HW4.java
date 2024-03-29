@@ -5,7 +5,7 @@ class HW4 {
         for (int row = 0, col = 0; col < n; col++) {
             if (Math.abs(A[row][col]) <= 1e-9) { // A[row][col] == 0
                 for (int i = row + 1; i < n; i++) {
-                    if (Math.abs(A[row][col]) > 1e-9) { // A[row][col] > 0
+                    if (Math.abs(A[i][col]) > 1e-9) { // A[row][col] != 0
                         double[] temp = A[row];
                         A[row] = A[i];
                         A[i] = temp;
