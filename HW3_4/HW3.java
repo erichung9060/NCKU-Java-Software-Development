@@ -54,7 +54,8 @@ class HW3 {
 
         int move_x = scanner.nextInt();
         int move_y = scanner.nextInt();
-
+        scanner.close();
+        
         System.out.println(Main_Point.RetrieveVertical() + " " + Main_Point.RetrieveHorizontal());
         Main_Point.Move(move_x, move_y);
         System.out.println(Main_Point.RetrieveVertical() + " " + Main_Point.RetrieveHorizontal());
@@ -64,6 +65,6 @@ class HW3 {
         }
         System.out.println(Main_Point.calculateManhattanDistance(Other_Point));
         System.out.println(Main_Point.ChebyshevDistance(Other_Point));
-        scanner.close();
+        
     }
 }
